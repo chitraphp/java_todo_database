@@ -18,28 +18,41 @@ public class AppIntegrationTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Todo list!");
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Categories-Tasks!");
+  }
 
-  // @Test
-  // public void taskIsCreatedTest() {
-  //   goTo("http://localhost:4567/");
-  //   click("a", withText("Add a new task"));
-  //   fill("#description").with("Mow the lawn");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Your task has been saved.");
-  // }
+    @Test
+    public void categoryIsDisplayedTest() {
+    goTo("http://localhost:4567/category/new");
+    fill("#cname").with("Household chores");
+    submit(".btn");
+    click("a", withText("Categories List"));
+    assertThat(pageSource()).contains("Household chores");
+  }
 
-  // @Test
-  // public void taskShowPageDisplayDescription() {
-  //   goTo("http://localhost:4567/tasks/new");
-  //   fill("#description").with("Mow the lawn");
-  //   submit(".btn");
-  //   click("a", withText("view all tasks"));
-  //   click("a", withText("Mow the lawn"));
-  //   assertThat(pageSource()).contains("Mow the lawn");
-  // }
+  @Test
+  public void categoryLinkIsDisplayedTest() {
+  Category myCategory = new Category("Household chores");
+  myCategory.save();
+  String categoryPath = String.format("http://localhost:4567/categories/%d/tasks", myCategory.getId());
+  goTo(categoryPath);
+  assertThat(pageSource()).contains("Household chores");
+  }
+
+  @Test
+  public void allCategoryTasksAreDisplayedTest() {
+  Category myCategory = new Category("Household chores");
+  myCategory.save();
+  Task firstTask = new Task("Mow the lawn", myCategory.getId());
+  firstTask.save();
+  Task secondTask = new Task("Do the dishes", myCategory.getId());
+  secondTask.save();
+  String categoryPath = String.format("http://localhost:4567/categories/%d/tasks/new", myCategory.getId());
+  goTo(categoryPath);
+  assertThat(pageSource()).contains("Household chores");
+  assertThat(pageSource()).contains("Mow the lawn");
+  }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TaskTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-08-24T18:22:32" hostname="epicodus-113.local" time="0.06">
+<testsuite name="TaskTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-08-24T23:27:33" hostname="epicodus-113.local" time="0.053">
   <properties/>
-  <testcase name="equals_returnsTrueIfDescriptionsAretheSame" classname="TaskTest" time="0.005"/>
-  <testcase name="save_savesCategoryIdIntoDB_true" classname="TaskTest" time="0.02"/>
-  <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.008"/>
-  <testcase name="all_savesIntoDatabase_true" classname="TaskTest" time="0.013"/>
-  <testcase name="find_findsTaskInDatabase_true" classname="TaskTest" time="0.013"/>
+  <testcase name="equals_returnsTrueIfDescriptionsAretheSame" classname="TaskTest" time="0.004"/>
+  <testcase name="save_savesCategoryIdIntoDB_true" classname="TaskTest" time="0.017"/>
+  <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.007"/>
+  <testcase name="all_savesIntoDatabase_true" classname="TaskTest" time="0.012"/>
+  <testcase name="find_findsTaskInDatabase_true" classname="TaskTest" time="0.012"/>
   <system-out><![CDATA[1
 1
 ]]></system-out>
