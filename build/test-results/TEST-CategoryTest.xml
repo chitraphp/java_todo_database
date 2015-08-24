@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-08-24T17:12:29" hostname="epicodus-113.local" time="0.001">
+  <properties/>
+  <testcase name="getName_returnsName_true" classname="CategoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
