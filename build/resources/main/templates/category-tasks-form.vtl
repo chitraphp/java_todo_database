@@ -1,16 +1,17 @@
 <h1>category.getName()</h1>
 
-#if ($tasks)
 #foreach($task in $tasks)
   <ul>
     <li><h3>$task.getDescription()</h3></li>
   </ul>
-#else
+#end
 <h1>Add New Task for this category</h1>
 <form action="/tasks" method="post">
-  <label for="cname">Category name</label>
-  <input id="cname" name="cname" type="text">
+  <label for="description">Category name</label>
+  <input id="description" name="description" type="text">
   <input type="hidden" name="catId" value="$category.getId()">
-  <button type="submit" class="btn btn-success">Add Category</button>
+  <button type="submit" class="btn btn-success">Add Task</button>
 </form>
-#end
+
+<br><a href="/">Categories List</a></br>
+<a href="/category/new">Add a New category</a><br>

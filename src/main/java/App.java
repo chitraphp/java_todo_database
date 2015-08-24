@@ -14,7 +14,7 @@ public class App {
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
-      model.put("categories", Category.getAll());
+      model.put("categories", Category.all());
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -29,7 +29,7 @@ public class App {
       String cname = request.queryParams("cname");
       Category newCategory = new Category(cname);
       newCategory.save();
-      model.put("categories", categories.all());
+      model.put("categories", Category.all());
       model.put("template", "templates/category-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
